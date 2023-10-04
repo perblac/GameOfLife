@@ -1,4 +1,12 @@
 table,tr,td {
-  border:1px solid black;
+  border:0.1px solid gray;
   border-collapse: collapse;
 }
+td {
+  width: 3px;
+  height: 3px;
+}
+form  { display: table;      }
+p     { display: table-row;  }
+label { display: table-cell; }
+input { display: table-cell; text-align: center; }
