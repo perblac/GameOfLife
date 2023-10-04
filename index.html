@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - gameoflife-old</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html>
+  <head>
+    <title>
+      Game Of Life
+    </title>
+  </head>
+  <body>
+    <table>
+    <tbody id="tablaInterior">
+      <!--
+      <tr>
+        <td id="X00-Y00">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X01-Y00">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X02-Y00">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X03-Y00">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X04-Y00">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X05-Y00">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X06-Y00">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X07-Y00">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+      </tr>
+      <tr>
+        <td id="X00-Y01">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X01-Y01">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X02-Y01">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X03-Y01">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X04-Y01">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X05-Y01">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X06-Y01">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X07-Y01">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+      </tr>
+      <tr>
+        <td id="X00-Y02">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X01-Y02">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X02-Y02">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X03-Y02">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X04-Y02">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X05-Y02">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X06-Y02">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X07-Y02">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+      </tr>
+      <tr>
+        <td id="X00-Y03">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X01-Y03">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X02-Y03">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X03-Y03">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X04-Y03">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X05-Y03">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X06-Y03">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X07-Y03">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+      </tr>
+      <tr>
+        <td id="X00-Y04">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X01-Y04">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X02-Y04">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X03-Y04">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X04-Y04">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X05-Y04">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X06-Y04">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X07-Y04">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+      </tr>
+      <tr>
+        <td id="X00-Y05">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X01-Y05">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X02-Y05">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X03-Y05">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X04-Y05">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X05-Y05">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X06-Y05">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X07-Y05">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+      </tr>
+      <tr>
+        <td id="X00-Y06">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X01-Y06">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X02-Y06">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X03-Y06">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X04-Y06">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X05-Y06">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X06-Y06">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X07-Y06">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+      </tr>
+      <tr>
+        <td id="X00-Y07">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X01-Y07">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X02-Y07">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X03-Y07">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X04-Y07">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X05-Y07">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X06-Y07">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+        <td id="X07-Y07">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+      </tr>
+-->
+    </tbody>
+    </table>
+  </body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
